@@ -1,6 +1,6 @@
 package com.test.rxjava.ch04.convert;
 
-import com.test.rxjava.ch04.DebugSingleObserver;
+import com.test.rxjava.DebugSingleObserver;
 import io.reactivex.Flowable;
 import io.reactivex.Single;
 

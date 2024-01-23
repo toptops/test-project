@@ -1,6 +1,6 @@
 package com.test.rxjava.ch04.convert;
 
-import com.test.rxjava.ch04.DebugSubscriber;
+import com.test.rxjava.DebugSubscriber;
 import io.reactivex.Flowable;
 
 /**

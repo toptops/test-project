@@ -1,16 +1,17 @@
-package com.test.rxjava.ch04.convert;
+package com.test.rxjava.ch04.operator;
 
 import com.test.rxjava.DebugSubscriber;
 import io.reactivex.Flowable;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class BufferSample {
+/**
+ * 흠...? Stream 그냥 결합된 것 뿐이군
+ */
+public class FilterSample {
     public static void main(String[] args) throws InterruptedException {
-        Flowable<List<Long>> flowable = Flowable.interval(100L, TimeUnit.MILLISECONDS)
-                .take(10)
-                .buffer(3);
+        Flowable<Long> flowable = Flowable.interval(300L, TimeUnit.MILLISECONDS)
+                .filter(data -> data%2 == 0);
 
         flowable.subscribe(new DebugSubscriber<>());
         Thread.sleep(3000L);

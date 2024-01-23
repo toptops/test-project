@@ -1,21 +1,22 @@
-package com.test.rxjava.ch04;
+package com.test.rxjava;
 
-import io.reactivex.subscribers.DisposableSubscriber;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.observers.DisposableMaybeObserver;
 
-public class DebugSubscriber<T> extends DisposableSubscriber<T> {
+public class DebugMaybeObserver<T> extends DisposableMaybeObserver<T> {
     private String label;
 
-    public DebugSubscriber() {
+    public DebugMaybeObserver() {
         super();
     }
 
-    public DebugSubscriber(String label) {
+    public DebugMaybeObserver(String label) {
         super();
         this.label = label;
     }
 
     @Override
-    public void onNext(T data) {
+    public void onSuccess(T data) {
         String threadName = Thread.currentThread().getName();
         if(label == null) {
             System.out.println(threadName + ": " + data);

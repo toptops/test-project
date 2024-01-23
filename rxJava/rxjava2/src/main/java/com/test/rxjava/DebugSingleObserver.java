@@ -1,4 +1,4 @@
-package com.test.rxjava.ch04;
+package com.test.rxjava;
 
 import io.reactivex.annotations.NonNull;
 import io.reactivex.observers.DisposableSingleObserver;

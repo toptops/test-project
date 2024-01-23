@@ -1,18 +1,16 @@
-package com.test.rxjava.ch04.convert;
+package com.test.rxjava.ch04.operator;
 
 import com.test.rxjava.DebugSubscriber;
 import io.reactivex.Flowable;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class BufferSample {
+public class TakeLastSample2 {
     public static void main(String[] args) throws InterruptedException {
-        Flowable<List<Long>> flowable = Flowable.interval(100L, TimeUnit.MILLISECONDS)
+        Flowable<Long> flowable = Flowable.interval(300L, TimeUnit.MILLISECONDS)
                 .take(10)
-                .buffer(3);
-
+                .takeLast(2, 1000L, TimeUnit.MILLISECONDS);
         flowable.subscribe(new DebugSubscriber<>());
-        Thread.sleep(3000L);
+        Thread.sleep(4000L);
     }
 }
