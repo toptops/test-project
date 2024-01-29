@@ -1,0 +1,11 @@
+### Blocking Cofffe
+GET http://localhost:8080/head/v1/coffee/blocking/1
+
+### Blocking Cofffe All
+GET http://localhost:8080/head/v1/coffee/blocking
+
+### Non-Blocking Coffee
+GET http://localhost:8080/head/v1/coffee/non-blocking/2
+
+### Non-Blocking Coffee All
+GET http://localhost:8080/head/v1/coffee/non-blocking
