@@ -1,0 +1,23 @@
+### Book Post
+POST http://localhost:8080/v1/mvc/books
+Content-Type: application/json
+
+{
+  "titleKorean" : "테스트 책 이름",
+  "titleEnglish" : "Test Book Name",
+  "description" : "test!!!",
+  "author" : "Test",
+  "isbn" : "222-22-2222-22",
+  "publishDate" : "2024-02-06 13:00:00"
+}
+
+### Book Patch
+PATCH http://localhost:8080/v1/mvc/books/0
+Content-Type: application/json
+
+{
+  "author": "Test PatchUpdate"
+}
+
+### Book Get
+GET http://localhost:8080/v1/mvc/books/0

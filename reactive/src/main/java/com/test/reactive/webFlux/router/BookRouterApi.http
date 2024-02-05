@@ -1,0 +1,11 @@
+### Book Post
+POST http://localhost:8080/v1/router/books
+Content-Type: application/json
+
+{
+  "titleEnglish" : "Test Book Name",
+  "description" : "test!!!",
+  "author" : "Test",
+  "isbn" : "222-22-2222-22",
+  "publishDate" : "2024-02-06 13:00:00"
+}

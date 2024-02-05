@@ -1,0 +1,8 @@
+### Book Web
+GET http://localhost:8080/v1/controller/books/123
+
+### Book Router
+GET http://localhost:8080/v1/router/books/123
+
+### Book Reactor
+GET http://localhost:8080/v1/books/1
