@@ -11,11 +11,15 @@ spring:
 #          class: org.apache.kafka.clients.producer.RoundRobinPartitioner
     consumer:
       bootstrap-servers: 211.54.26.38:29092,211.54.26.38:29093,211.54.26.38:29094
-      group-id: my-consumer-group
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      auto-commit-interval: 1000
-      enable-auto-commit: true
-      properties:
-        max-poll-interval-ms: 5000
+#      group-id: my-consumer-group
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      auto-commit-interval: 1000
+#      enable-auto-commit: true
+    listener:
+      ack-mode: manual_immediate
+      type: single
+
+server:
+  shutdown: graceful
