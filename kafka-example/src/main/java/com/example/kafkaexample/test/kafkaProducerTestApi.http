@@ -1,5 +1,8 @@
 ### Kafka Producer Test
-GET http://localhost:8080/v1/kafka/test/test1/testData
+GET http://localhost:8080/v1/kafka/test/1/testData333
 
 ### Kafka Custom Partitioner Producer Test
-GET http://localhost:8080/v1/kafka/test/custom/5/t231
+GET http://localhost:8080/v1/kafka/test/custom/6/kkkk
+
+### Kafka Paust Test
+GET http://localhost:8080/v1/kafka/test/pause

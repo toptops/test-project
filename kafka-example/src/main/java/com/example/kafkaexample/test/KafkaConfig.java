@@ -4,6 +4,8 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
+import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
@@ -30,5 +32,14 @@ public class KafkaConfig {
     @Bean
     public KafkaTemplate<String, String> customKafkaTemplate(ProducerFactory<String, String> customProducerFactory) {
         return new KafkaTemplate<>(customProducerFactory);
+    }
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<?, ?> kafkaListenerContainerFactory(final ConsumerFactory<Object, Object> consumerFactory,
+                                                                                       final CustomConsumerRebalanceListener consumerRebalanceListener) {
+        ConcurrentKafkaListenerContainerFactory<Object, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(consumerFactory);
+        factory.getContainerProperties().setConsumerRebalanceListener(consumerRebalanceListener);
+        return factory;
     }
 }
