@@ -26,4 +26,10 @@ public class KafkaTestApi {
         log.info("# kafka producer test, key: {}, message: {}", key, message);
         kafkaProducerService.sendMessage(key, message);
     }
+
+    @GetMapping("/custom/{key}/{message}")
+    public void customTest(@PathVariable String key, @PathVariable String message) {
+        log.info("# kafka custom partitioner producer test key: {}, message: {}", key, message);
+        kafkaProducerService.sendMessageByCustomPartitioner(key, message);
+    }
 }
